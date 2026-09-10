@@ -7,7 +7,7 @@ import {
 import Home from "./components/Home";
 import Login from "./components/Login";
 import StudentDashboard from "./components/StudentDashboard";
-import ProfessorDashboard from "./components/ProfessorDashBoard";
+import ProfessorDashboard from "./components/ProfessorDashboard";
 import AdminDashboard from "./components/AdminDashboard";
 import StudentManagement from "./components/StudentManagement";
 import ProfessorManagement from "./components/ProfessorManagement";
