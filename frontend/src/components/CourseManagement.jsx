@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { API_URL } from "../services/api";
 
 import {
     getToken,
