@@ -1,0 +1,1606 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f5f7fb;
+    color: #172033;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: #111827;
+    color: white;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* =========================================
+   HOME HERO
+========================================= */
+
+.hero-section {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(59, 130, 246, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e3a8a
+        );
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: #93c5fd;
+}
+
+.hero-content h1 {
+    margin: 0;
+
+    font-size: 60px;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+    color: #60a5fa;
+}
+
+.hero-content p {
+    max-width: 700px;
+
+    margin: 28px auto;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: #dbeafe;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 14px 26px;
+
+    background: white;
+    color: #1e3a8a;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   HOME FEATURES
+========================================= */
+
+.features-section {
+    padding: 90px 8%;
+    background: #f8fafc;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading.center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 32px;
+    color: #111827;
+}
+
+.section-heading p {
+    margin-top: 10px;
+
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   PORTAL CARDS
+========================================= */
+
+.portal-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.portal-card {
+    position: relative;
+
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.portal-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.portal-icon {
+    font-size: 46px;
+
+    margin-bottom: 20px;
+}
+
+.card-number {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+    font-weight: 800;
+}
+
+.portal-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 24px;
+}
+
+.portal-card p {
+    min-height: 75px;
+
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+.portal-button {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 11px 20px;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+.portal-button:hover {
+    background: #1d4ed8;
+}
+
+.professor-button {
+    background: #059669;
+}
+
+.professor-button:hover {
+    background: #047857;
+}
+
+.admin-button {
+    background: #7c3aed;
+}
+
+.admin-button:hover {
+    background: #6d28d9;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 35px;
+
+    text-align: center;
+
+    background: #111827;
+
+    color: white;
+}
+
+footer div {
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #94a3b8;
+}
+
+footer span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(37, 99, 235, 0.12),
+            transparent 35%
+        ),
+        #f1f5f9;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 1050px;
+
+    min-height: 620px;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.14);
+}
+
+.login-brand {
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111827,
+            #1e3a8a
+        );
+
+    color: white;
+}
+
+.login-logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.brand-tag {
+    margin-top: 10px;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    color: #93c5fd;
+}
+
+.login-brand h1 {
+    margin: 45px 0 20px;
+
+    font-size: 42px;
+    line-height: 1.15;
+}
+
+.login-brand > p {
+    max-width: 480px;
+
+    color: #cbd5e1;
+
+    line-height: 1.7;
+}
+
+.login-features {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    color: #dbeafe;
+
+    font-size: 14px;
+}
+
+.login-form-container {
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form-header span {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #2563eb;
+}
+
+.login-form-header h2 {
+    margin: 10px 0 8px;
+
+    font-size: 32px;
+
+    color: #111827;
+}
+
+.login-form-header p {
+    margin-bottom: 35px;
+
+    color: #64748b;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #334155;
+}
+
+.form-group input {
+    padding: 13px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.login-error {
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+}
+
+.login-submit {
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 15px;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.login-submit:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.login-submit:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.back-home {
+    margin-top: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.back-home:hover {
+    color: #2563eb;
+}
+
+
+/* =========================================
+   PROFESSOR DASHBOARD
+========================================= */
+
+.professor-page {
+    min-height: 100vh;
+
+    background: #f1f5f9;
+}
+
+.professor-header {
+    padding: 30px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e3a8a
+        );
+
+    color: white;
+}
+
+.professor-header h1 {
+    margin: 5px 0;
+
+    font-size: 30px;
+}
+
+.professor-header p {
+    margin: 5px 0;
+
+    color: #cbd5e1;
+}
+
+.dashboard-label {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+
+    color: #93c5fd;
+}
+
+.logout-button {
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #1e3a8a;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.logout-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.professor-content {
+    width: 86%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 45px 0 80px;
+}
+
+
+/* =========================================
+   PROFESSOR INFORMATION
+========================================= */
+
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.professor-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.info-box {
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.info-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #64748b;
+
+    font-weight: 800;
+}
+
+.info-box strong {
+    color: #172033;
+
+    font-size: 15px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 45px;
+}
+
+.stat-card {
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 13px;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    font-size: 24px;
+}
+
+.stat-card span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.stat-card strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 28px;
+
+    color: #111827;
+}
+
+
+/* =========================================
+   COURSES
+========================================= */
+
+.course-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.course-card-new {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.course-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.course-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    font-size: 21px;
+}
+
+.course-id {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    color: #94a3b8;
+
+    letter-spacing: 1px;
+}
+
+.course-card-new h3 {
+    margin: 20px 0 5px;
+
+    font-size: 22px;
+
+    color: #172033;
+}
+
+.course-credits {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.course-divider {
+    height: 1px;
+
+    margin: 20px 0;
+
+    background: #e2e8f0;
+}
+
+.course-enrollment-summary {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.course-enrollment-summary span {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.course-enrollment-summary strong {
+    font-size: 20px;
+
+    color: #2563eb;
+}
+
+
+/* =========================================
+   ENROLLMENT TABLE
+========================================= */
+
+.enrollment-table-wrapper {
+    overflow-x: auto;
+}
+
+.enrollment-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 12px;
+}
+
+.enrollment-table th {
+    padding: 10px;
+
+    text-align: left;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+.enrollment-table td {
+    padding: 11px 10px;
+
+    border-bottom: 1px solid #f1f5f9;
+
+    color: #475569;
+}
+
+.grade-badge {
+    display: inline-block;
+
+    min-width: 28px;
+
+    padding: 4px 7px;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-weight: 800;
+}
+
+.status-badge {
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.no-enrollments {
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   EMPTY / LOADING / ERROR
+========================================= */
+
+.empty-state {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+}
+
+.empty-icon {
+    font-size: 40px;
+}
+
+.empty-state h3 {
+    margin-bottom: 5px;
+}
+
+.empty-state p {
+    color: #64748b;
+}
+
+.dashboard-loading,
+.dashboard-error {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.dashboard-error p {
+    color: #64748b;
+}
+
+.primary-button {
+    margin-top: 15px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: 700;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 20px;
+
+    border: 4px solid #dbeafe;
+
+    border-top-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   STUDENT DASHBOARD
+========================================= */
+
+.student-page {
+    min-height: 100vh;
+
+    background: #f1f5f9;
+}
+
+.student-header {
+    padding: 30px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1d4ed8
+        );
+
+    color: white;
+}
+
+.student-header h1 {
+    margin: 5px 0;
+
+    font-size: 30px;
+}
+
+.student-header p {
+    color: #cbd5e1;
+}
+
+.student-content {
+    width: 86%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 45px 0;
+}
+
+.student-profile-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border: 1px solid #e2e8f0;
+}
+
+.student-avatar {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+.student-profile-main h2 {
+    margin: 4px 0;
+
+    font-size: 24px;
+}
+
+.student-profile-main p {
+    margin: 0;
+
+    color: #64748b;
+}
+
+.student-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.student-notice {
+    margin-top: 30px;
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 15px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 12px;
+
+    color: #1e40af;
+}
+
+.student-notice p {
+    margin: 5px 0 0;
+
+    color: #3b82f6;
+}
+
+
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+
+.admin-dashboard {
+    min-height: 100vh;
+    background: #f4f7fb;
+    padding: 30px 50px;
+}
+
+.admin-header {
+    background: linear-gradient(
+        135deg,
+        #4c1d95,
+        #7c3aed
+    );
+
+    color: white;
+
+    padding: 25px 30px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.admin-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+}
+
+.admin-header p {
+    margin: 7px 0 0;
+
+    opacity: 0.9;
+}
+
+.admin-header button {
+    background: white;
+
+    color: #4c1d95;
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.admin-header button:hover {
+    transform: translateY(-2px);
+}
+
+.admin-welcome {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.admin-welcome h2 {
+    margin-top: 0;
+
+    color: #4c1d95;
+}
+
+.admin-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.admin-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.07);
+
+    border: 1px solid #e5e7eb;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.admin-card h3 {
+    margin-top: 0;
+
+    color: #4c1d95;
+}
+
+.admin-card p {
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #172554,
+            #2563eb
+        );
+
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-card h1 {
+    margin-top: 0;
+
+    text-align: center;
+
+    color: #172554;
+}
+
+.login-card > p {
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 30px;
+}
+
+.login-card form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.login-card label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #374151;
+}
+
+.login-card input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.login-card input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            37,
+            99,
+            235,
+            0.12
+        );
+}
+
+.login-card button {
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background: #1d4ed8;
+}
+
+.login-card button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+/* ================================
+   RESPONSIVE ADMIN
+================================ */
+
+@media (max-width: 900px) {
+
+    .admin-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .admin-dashboard {
+        padding: 20px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-card {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .portal-container {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+    .professor-info-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand {
+        display: none;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .professor-header,
+    .student-header,
+    .admin-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 25px;
+    }
+
+    .professor-content,
+    .student-content,
+    .admin-content {
+        width: 92%;
+    }
+
+    .professor-info-grid,
+    .student-info-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-page {
+        padding: 15px;
+    }
+
+    .login-form-container {
+        padding: 35px 25px;
+    }
+}
