@@ -2,8 +2,8 @@ package com.SIMS.Student_Info_Management_System.Entity;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -35,9 +35,9 @@ public class Professors {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @JsonIgnore
-    @Column(name = "password", nullable = false)
-    private String password;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+@Column(name = "password", nullable = false)
+private String password;
 
     @Column(name = "role", nullable = false)
     private String role;

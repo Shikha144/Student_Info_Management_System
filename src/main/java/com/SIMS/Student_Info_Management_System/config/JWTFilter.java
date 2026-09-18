@@ -42,6 +42,7 @@ protected void doFilterInternal(
 
     if (requestUri.equals("/student/login")
             || requestUri.equals("/student/register")
+        || requestUri.equals("/professor/login")
             || requestUri.startsWith("/auth/")
             || requestUri.startsWith("/v3/api-docs")
             || requestUri.startsWith("/swagger-ui")) {

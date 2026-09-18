@@ -18,6 +18,7 @@ import com.SIMS.Student_Info_Management_System.DTO.GradeRequest;
 import com.SIMS.Student_Info_Management_System.DTO.ProfessorDashboardDTO;
 import com.SIMS.Student_Info_Management_System.DTO.ProfessorEnrollmentDTO;
 import com.SIMS.Student_Info_Management_System.Entity.Professors;
+import com.SIMS.Student_Info_Management_System.Service.AuthService;
 import com.SIMS.Student_Info_Management_System.Service.ProfessorService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -30,7 +31,9 @@ public class ProfessorController {
 
     @Autowired
     private ProfessorService professorService;
-
+    
+@Autowired
+private AuthService authService;
 
     // =====================================================
     // ADMIN / PROFESSOR MANAGEMENT
@@ -56,7 +59,19 @@ public class ProfessorController {
                 .saveProfessors(professor);
     }
 
+//professor login
+@PostMapping("/login")
+public ResponseEntity<String> login(
+        @RequestBody Professors professor) {
 
+    String token =
+            authService.verifyProfessor(
+                    professor.getEmail(),
+                    professor.getPassword()
+            );
+
+    return ResponseEntity.ok(token);
+}
     // =====================================================
     // CURRENT LOGGED-IN PROFESSOR
     // =====================================================

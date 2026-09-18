@@ -143,10 +143,15 @@ function ProfessorDashboard() {
     // LOGOUT
     // =====================================================
 
+
     const handleLogout = () => {
+
         logout();
-        navigate("/login");
+
+        navigate("/login?type=professor");
     };
+
+
 
     // =====================================================
     // UPDATE GRADE
@@ -1383,11 +1388,11 @@ function ProfessorDashboard() {
                                                                                             {savingGrade ===
                                                                                                 enrollment.enrollment_id && (
 
-                                                                                                <small>
-                                                                                                    Saving...
-                                                                                                </small>
+                                                                                                    <small>
+                                                                                                        Saving...
+                                                                                                    </small>
 
-                                                                                            )}
+                                                                                                )}
 
                                                                                         </div>
 
@@ -1403,7 +1408,7 @@ function ProfessorDashboard() {
                                                                                             <span
                                                                                                 className={
                                                                                                     enrollment.status ===
-                                                                                                    "ACTIVE"
+                                                                                                        "ACTIVE"
                                                                                                         ? "status-badge active"
                                                                                                         : "status-badge"
                                                                                                 }

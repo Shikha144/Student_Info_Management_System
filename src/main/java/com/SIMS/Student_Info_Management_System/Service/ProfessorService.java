@@ -80,6 +80,7 @@ private PasswordEncoder passwordEncoder;
 
         if (professor == null) {
 
+
             throw new ResourceNotFoundException(
                     "Professor not found with email: "
                             + email

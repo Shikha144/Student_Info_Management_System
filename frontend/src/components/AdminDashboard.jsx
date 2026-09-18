@@ -643,7 +643,7 @@ const AdminDashboard = () => {
 
         logout();
 
-        navigate("/login");
+        navigate("/login?type=admin"); 
     };
 
 

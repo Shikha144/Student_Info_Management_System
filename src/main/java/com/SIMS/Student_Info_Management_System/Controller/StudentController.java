@@ -3,7 +3,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,13 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.SIMS.Student_Info_Management_System.Service.AuthService;
 import com.SIMS.Student_Info_Management_System.Service.StudentService;
-import jakarta.servlet.http.HttpServletRequest;
 import com.SIMS.Student_Info_Management_System.Entity.Students;
 import com.SIMS.Student_Info_Management_System.DTO.StudentResponseDTO;
 import java.util.stream.Collectors;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestParam;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -141,9 +137,31 @@ public ResponseEntity<String> deleteStudents(@PathVariable int id) {
     );
 }
 
-@PostMapping("/login")
+/*@PostMapping("/login")
 public String login(@RequestBody Students student){
     return service.Verify(student.getEmail(), student.getPassword());
+}*/
+@PostMapping("/login")
+public ResponseEntity<String> login(
+        @RequestBody Students student) {
+
+    try {
+
+        String token =
+                service.verify(
+                        student.getEmail(),
+                        student.getPassword(),
+                        "ROLE_STUDENT"
+                );
+
+        return ResponseEntity.ok(token);
+
+    } catch (Exception e) {
+
+        return ResponseEntity
+                .status(HttpStatus.FORBIDDEN)
+                .body("You are not authorized to use the student login.");
+    }
 }
 
 @GetMapping("/me")

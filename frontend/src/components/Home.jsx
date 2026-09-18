@@ -108,7 +108,8 @@ function Home() {
                         </p>
 
                         <Link
-                            to="/login"
+                           // to="/login"
+                           to="/login?type=student"
                             className="portal-button"
                         >
                             Student Portal
@@ -137,7 +138,8 @@ function Home() {
                         </p>
 
                         <Link
-                            to="/login"
+                            //to="/login"
+                                to="/login?type=professor"
                             className="portal-button professor-button"
                         >
                             Professor Portal
@@ -166,7 +168,8 @@ function Home() {
                         </p>
 
                         <Link
-                            to="/login"
+                            //to="/login"   
+                             to="/login?type=admin"
                             className="portal-button admin-button"
                         >
                             Admin Portal
