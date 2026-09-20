@@ -10,18 +10,15 @@ The application provides role-specific functionality for **Administrators, Profe
 
 ### 🌐 Live Application
 
-**Frontend:**
-https://student-info-management-system-frontend.onrender.com
+**Frontend:** https://student-info-management-system-frontend.onrender.com
 
 ### 📚 Swagger API Documentation
 
-**Swagger UI:**
-https://student-info-management-system-g7v0.onrender.com/swagger-ui/index.html
+**Swagger UI:** https://student-info-management-system-g7v0.onrender.com/swagger-ui/index.html
 
 ### ⚙️ Backend API
 
-**Spring Boot Backend:**
-https://student-info-management-system-g7v0.onrender.com
+**Spring Boot Backend:** https://student-info-management-system-g7v0.onrender.com
 
 > **Note:** The application is deployed on Render. Initial requests may take a little longer if a service has been idle.
 
@@ -31,17 +28,18 @@ https://student-info-management-system-g7v0.onrender.com
 
 Demo accounts are available for exploring the application's different role-based workflows.
 
-| Role            | Demo Email                            |
-| --------------- | ------------------------------------- |
-| 👨‍💼 Admin     | `demo.admin@sims.com`                 |
-| 👨‍🏫 Professor | `demo.professor@sims.com`             |
+| Role            | Demo Email                |
+| --------------- | ------------------------- |
+| 👨‍💼 Admin     | `demo.admin@sims.com`     |
+| 👨‍🏫 Professor | `demo.professor@sims.com` |
 | 🎓 Student      | `demo.student@sims.com`   |
 
-**demo123** Use the shared demo password configured for the demo accounts.
+**Demo Password:** `demo123`
 
 > These accounts are provided only for application demonstration and testing. Please do not enter sensitive personal information.
 
---
+---
+
 # 🎯 What You Can Explore
 
 ### 👨‍💼 Admin
@@ -177,6 +175,12 @@ Students can:
 
 * **PostgreSQL**
 
+## Testing
+
+* **JUnit 5**
+* **Mockito**
+* **Maven Surefire**
+
 ## API & Development Tools
 
 * **Swagger / OpenAPI**
@@ -308,8 +312,7 @@ The backend exposes RESTful endpoints for authentication, student management, pr
 
 Interactive API documentation is available through Swagger UI:
 
-**Swagger UI:**
-https://student-info-management-system-g7v0.onrender.com/swagger-ui/index.html
+**Swagger UI:** https://student-info-management-system-g7v0.onrender.com/swagger-ui/index.html
 
 Swagger can be used to:
 
@@ -320,6 +323,57 @@ Swagger can be used to:
 * Understand the backend API design
 
 Some endpoints require authentication and an appropriate JWT role.
+
+---
+
+# 🧪 Automated Testing
+
+The backend includes automated **service-layer unit tests using JUnit 5 and Mockito**.
+
+The tests focus on business logic within the service layer while mocking repository and security-related dependencies.
+
+### Testing Approach
+
+* **JUnit 5** for test execution and assertions
+* **Mockito** for mocking dependencies
+* **MockitoExtension** for test configuration
+* Repository dependencies mocked at the service layer
+* Password encoding and JWT dependencies mocked where required
+* Exception scenarios tested using `assertThrows`
+* Successful service operations verified with assertions and Mockito interaction verification
+
+### Current Service Tests
+
+The project currently includes unit tests for:
+
+* `AdminService`
+* `AuthService`
+* `CourseService`
+* `DashboardService`
+* `DepartmentService`
+* `ProfessorService`
+* `StudentService`
+* `Student_ProfileService`
+
+### Test Execution
+
+Tests can be executed with Maven:
+
+**Windows:**
+
+```powershell
+.\mvnw clean test
+```
+
+**macOS / Linux:**
+
+```bash
+./mvnw clean test
+```
+
+The service-layer test suite currently executes successfully with **21 tests passing and no failures or errors**.
+
+Testing can be expanded in future development to include integration, controller, repository, security, and end-to-end testing.
 
 ---
 
@@ -379,21 +433,36 @@ Student_Info_Management_System/
 │   └── vite.config.js
 │
 ├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── SIMS/
-│       │           └── Student_Info_Management_System/
-│       │               ├── controller/
-│       │               ├── service/
-│       │               ├── repository/
-│       │               ├── entity/
-│       │               ├── dto/
-│       │               ├── security/
-│       │               └── ...
-│       │
-│       └── resources/
-│           └── application.properties
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── SIMS/
+│   │   │           └── Student_Info_Management_System/
+│   │   │               ├── controller/
+│   │   │               ├── service/
+│   │   │               ├── repository/
+│   │   │               ├── entity/
+│   │   │               ├── dto/
+│   │   │               ├── security/
+│   │   │               └── ...
+│   │   │
+│   │   └── resources/
+│   │       └── application.properties
+│   │
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── SIMS/
+│                   └── Student_Info_Management_System/
+│                       └── Service/
+│                           ├── AdminServiceTest.java
+│                           ├── AuthServiceTest.java
+│                           ├── CourseServiceTest.java
+│                           ├── DashboardServiceTest.java
+│                           ├── DepartmentServiceTest.java
+│                           ├── ProfessorServiceTest.java
+│                           ├── StudentServiceTest.java
+│                           └── Student_ProfileServiceTest.java
 │
 ├── .gitignore
 ├── Dockerfile
@@ -500,6 +569,9 @@ Vite will display the local frontend URL in the terminal.
 
 The application can be tested and explored using:
 
+* **JUnit 5**
+* **Mockito**
+* **Maven**
 * Swagger UI
 * Postman
 * Browser/API clients
@@ -512,10 +584,9 @@ Authenticated requests use JWT bearer authentication:
 Authorization: Bearer <JWT>
 ```
 
-Automated test coverage is an area planned for future development.
+The current automated testing implementation focuses on **service-layer unit testing**. Additional integration, controller, repository, security, and end-to-end tests can be added as the project evolves.
 
 ---
-
 
 # 🚀 Deployment
 
@@ -559,9 +630,9 @@ The current application provides the core full-stack functionality. Planned enha
 
 Expand testing coverage with:
 
-* Unit tests
+* Additional unit tests
 * Integration tests
-* Repository/service tests
+* Repository tests
 * REST API tests
 * Security and authorization tests
 * End-to-end frontend testing
@@ -655,12 +726,13 @@ Current
    ├── PostgreSQL
    ├── Spring Security
    ├── JWT / RBAC
+   ├── JUnit 5 / Mockito
    └── Render Deployment
         │
         ▼
 Next
    │
-   ├── Automated Testing
+   ├── Integration Testing
    ├── CI/CD
    ├── Docker
    ├── Monitoring
@@ -698,10 +770,9 @@ GitHub: `Shikha144`
 * JWT authentication
 * BCrypt password hashing
 * Role-Based Access Control
+* JUnit 5 and Mockito service-layer testing
 * Swagger/OpenAPI
 * Git/GitHub
-* Cloud deployment
+* Cloud deployment with Render
 
-The project will continue to evolve with additional testing, CI/CD, containerization, microservices, Kubernetes, monitoring, and academic management features.
-
-
+The project will continue to evolve with additional integration testing, CI/CD, containerization, microservices, Kubernetes, monitoring, and academic management features.
